@@ -1,0 +1,8 @@
+{
+  "name": "claude-crawl",
+  "description": "Claude code web crawler",
+  "version": "1.0.0",
+  "author": {
+    "name": "Shawn Anderson"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "marketplace",
+  "owner": {
+    "name": "Shawn Anderson"
+  },
+  "plugins": [
+    {
+      "name": "claude-crawl",
+      "source": "./claude-crawl",
+      "description": "Claude code web crawler"
+    },
+    {
+      "name": "claude-plugin",
+      "source": "./claude-plugin",
+      "description": "Plugin for helping create and manage claude code plugins."
+    },
+    {
+      "name": "my-plugin",
+      "source": "./my-plugin",
+      "description": "A custom Claude Code plugin"
+    }
+  ]
+}
