@@ -1,6 +1,6 @@
 ---
 description: Brainstorm with the user in an organized way.
-argument-hint: 
+argument-hint: brainstorm
 ---
 
 # Brainstorm
@@ -32,7 +32,7 @@ REFLECTION: Generated Reflection
 
 Append the following to the STORM_FILE:
 ```
-title: TITLE
+# TITLE 
 summary: SUMMARY
 storm_id: STORM_ID
 date: DATE 
@@ -43,8 +43,6 @@ tasks:
 - [ ] TASKS
 related_storms:
 - RELATED_STORMS
-
-# TITLE 
 
 ## User Input
 USER_INPUT
