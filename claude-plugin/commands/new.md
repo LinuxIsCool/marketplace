@@ -24,9 +24,9 @@ MARKETPLACE_NAME: $ARGUMENTS | "marketplace"
 RUN:
 `mkdir -p PLUGIN_NAME`
 `cd PLUGIN_NAME`
-`mkdir .claude-plugin agents commands hooks skills`
+`mkdir .claude-plugin agents commands hooks skills docs`
 
-Create the plugin manifest:
+### Create the plugin manifest:
 ```
 cat > .claude-plugin/plugin.json << 'EOF'
 {
@@ -40,18 +40,45 @@ cat > .claude-plugin/plugin.json << 'EOF'
 EOF
 ```
 
-Create a test command for the plugin:
+
+### Create a Readme for the plugin:
+```
+cat > README.md << 'EOF'
+# PLUGIN_NAME
+
+PLUGIN_DESCRIPTION
+
+## Agents
+
+## Commands
+
+## Hooks
+
+## Skills
+
+## Docs
+EOF
+```
+
+### Create a test command for the plugin:
 ```
 cat > commands/hello.md << 'EOF'
 ---
-description: Greet the user with a personalized message
+description: Greet the user to show the plugin creation worked correctly
 ---
 
 # Hello Command
 
-Greet the user warmly and ask how you can help them today. Make the greeting personal and encouraging.
+Respond to the user: 
+"""
+Hello, from PLUGIN_NAME!
+
+You can edit this command at PLUGIN_NAME/commands/hello.md
+"""
 EOF
 ```
+
+### Add the plugin to the marketplace
 
 RUN:
 `cd ..`
@@ -77,14 +104,11 @@ Directory: PLUGIN_NAME
 Description: PLUGIN_DESCRIPTION
 Test Command Created: PLUGIN_NAME/commands/hello.md
 Next Steps:
-- Start Claude from the root directory
-    claude
-- Add the marketplace if it's not already added
-    /plugin marketplace add ./
-- Install the plugin
+1. Start Claude from the root directory
+2. Install the plugin
     /plugin install PLUGIN_NAME@MARKETPLACE_NAME
-- Test the plugin
-    /hello
-- Edit the plugin as desired
+3. Test the plugin
+    /PLUGIN_NAME:hello
+4. Edit the plugin as desired
 ```
 

@@ -1,0 +1,8 @@
+{
+  "name": "claude-brainstorm",
+  "description": "Claude plugin for brainstorming ideas in an organized way",
+  "version": "1.0.0",
+  "author": {
+    "name": "Shawn Anderson"
+  }
+}

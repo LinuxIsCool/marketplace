@@ -15,9 +15,9 @@
       "description": "Plugin for helping create and manage claude code plugins."
     },
     {
-      "name": "my-plugin",
-      "source": "./my-plugin",
-      "description": "A custom Claude Code plugin"
+      "name": "claude-brainstorm",
+      "source": "./claude-brainstorm",
+      "description": "Claude plugin for brainstorming ideas in an organized way"
     }
   ]
 }
