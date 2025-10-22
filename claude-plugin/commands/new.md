@@ -16,6 +16,11 @@ MARKETPLACE_NAME: $ARGUMENTS | "marketplace"
 
 ## Workflow
 1. Create a new directory for the plugin
+2. Create the plugin manifest
+3. Create a Readme for the plugin
+4. Create an example command for the plugin
+5. Add the plugin to the marketplace
+6. Provide a report
 
 ## Instructions
 
@@ -25,6 +30,7 @@ RUN:
 `mkdir -p PLUGIN_NAME`
 `cd PLUGIN_NAME`
 `mkdir .claude-plugin agents commands hooks skills docs`
+`touch .mcp.json`
 
 ### Create the plugin manifest:
 ```
@@ -64,14 +70,29 @@ EOF
 ```
 cat > commands/hello.md << 'EOF'
 ---
-description: Greet the user to show the plugin creation worked correctly
+description: Greet the user to show the plugin creation worked correctly [user_name (optional)]
+argument-hint: user_name (optional)
 ---
 
 # Hello Command
+Hello command that serves as a command template.
+
+## Variables
+USER_NAME: $ARGUMENTS (optional)
+
+## Workflow
+1. Greet the user
+
+## Instructions
+
+### Greet the user
+Provide the report below, using the USER_NAME variable if provided.
+
+## Report
 
 Respond to the user: 
 """
-Hello, from PLUGIN_NAME!
+Hello (USER_NAME), from PLUGIN_NAME!
 
 You can edit this command at PLUGIN_NAME/commands/hello.md
 """
